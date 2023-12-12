@@ -103,6 +103,19 @@ const filmy = [
       'Na zámek v podhůří Krkonoš přijíždí jeho nový majitel Štěpán se svojí snoubenkou, krásnou komtesou Blankou, a mladším bratrem Adamem. Cestou kočár nešťastně srazí kolemjdoucí dívku, Adam jí pomůže a ona se do něj zamiluje. Na zámku Adam objeví starou vlašskou knihu, která by měla obsahovat cestu k pokladům. Tajemné značky vlašské knihy však nedokáže vyluštit ani národopisec Jiráček, který v kraji sbírá pověsti a nevychází z údivu nad tím, že zdejší lidé stále věří v Krakonoše. Na zámku se objeví záhadný cizinec a nabídne Štěpánovi, že jej k pokladu za určitých podmínek dovede. Výprava do hor může začít. Naplní se Liduščina láska k Adamovi? Jakou záhadu skrývá starý obraz na zámku Hůrka a co strašlivého se v horách kdysi odehrálo? A kdo je vlastně Krakonoš a jaké je jeho největší tajemství? (csfd.cz, Česká televize)',
     premiera: '2022-12-24',
   },
+  {
+    id: 'matrix',
+    nazev: 'Matrix',
+    plakat: {
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsFjWI0lb4ZM9eRw31uQghXaYyuzjXCb_C_cq0P1UzrRPUVR8l',
+      sirka: 443,
+      vyska: 640,
+    },
+    ochutnavka: 'Chyba v realite.',
+    popis:
+      'Uvěříte neuvěřitelnému! Představte si, že vaše realita je jen iluzí a vaše nejtemnější noční můry jsou ve skutečnosti pravdivé. Představte si, že vaše současnost je vlastně minulostí a to budoucí se děje právě teď. Když si to dokážete představit, potom se budete cítit jako hrdina snímku Matrix Thomas Anderson (Keanu Reeves). A věřte, že to nebude příjemný pocit. Anderson je normální mladý muž, který se jen snaží přežít v každodenním shonu moderního velkoměsta. A má všechny předpoklady aby se mu to povedlo: dobré přátele, milující rodinu a perspektivní práci v multinárodní počítačové společnosti Meta Cortech. Jednoho dne, nebo lépe řečeno noci, se však do jeho spokojeného mozku zakousne strašlivá noční můra. Zdá se mu, že byl proti své vůli vložen v podobě dat do počítače a všechno to, co až dosud považoval za svůj osud, je jen vírem dat okolo několika tištěných spojů. Má pocit, že mu byla jeho mysl ukradena a uvězněna v obřím Matrix počítače budoucnosti. Začíná vážně pochybovat o své každodenní skutečnosti. Byl skutečně vhozen do stroje? Kdo je za to zodpovědný? Je tam s ním zavřeno i těch několik stovek lidí, které zná? Nebo jsou to jen projekce, které mají udržet zdání reality? A pak je tu otázka nejdůležitější: pokud je to všechno pravda, co se stane, až jeho věznitelé přijdou na to, že ji zná? (csfd.cz, Warner Bros. CZ)',
+    premiera: '1999-08-05',
+  },
 ];
 
 const detailFilmuElement = document.querySelector('#detail-filmu');
@@ -140,17 +153,17 @@ const rozdilMeziDnami = premiera.diff(dnes, 'days');
 
 if (rozdilMeziDnami === 0) {
   premieraHtml.innerHTML += ` Premiéra je dnes`;
-} 
-else if (rozdilMeziDnami < 0) {
-  premieraHtml.innerHTML += ` Premiéra byla pred ${Math.abs(rozdilMeziDnami)} dny.`;
-} 
-else if (rozdilMeziDnami > 0) {
-  premieraHtml.innerHTML += ` Premiéra bude za ${Math.abs(rozdilMeziDnami)} dní.`;
-} 
-else if (rozdilMeziDnami === -1) {
+} else if (rozdilMeziDnami < 0) {
+  premieraHtml.innerHTML += ` Premiéra byla pred ${Math.abs(
+    rozdilMeziDnami,
+  )} dny.`;
+} else if (rozdilMeziDnami > 0) {
+  premieraHtml.innerHTML += ` Premiéra bude za ${Math.abs(
+    rozdilMeziDnami,
+  )} dní.`;
+} else if (rozdilMeziDnami === -1) {
   premieraHtml.innerHTML += ` Premiéra byla včera.`;
-} 
-else if (rozdilMeziDnami === 1) {
+} else if (rozdilMeziDnami === 1) {
   premieraHtml.innerHTML += ` Premiéra je zítra.`;
 }
 
